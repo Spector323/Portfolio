@@ -1,206 +1,283 @@
 /* Общие стили */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  body {
-    background-color: #f5f5f5; /* Светло-серый фон */
-    color: #333;
-    line-height: 1.6;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f5f5f5; /* Светло-серый фон */
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden; /* Убираем горизонтальную прокрутку */
+}
+
+/* Контейнер */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px; /* Уменьшенный отступ для мобильных */
+}
+
+/* Шапка */
+.header {
+  text-align: center;
+  padding: 40px 0; /* Уменьшено для мобильных */
+  background-color: #e0e0e0;
+  color: #333;
+  border-radius: 8px;
+  margin-bottom: 20px; /* Меньше отступ снизу */
+}
+
+.header__title {
+  font-size: 36px; /* Уменьшено для мобильных */
+  margin-bottom: 8px;
+}
+
+.header__subtitle {
+  font-size: 18px;
+  color: #666;
+}
+
+/* Обо мне */
+.about {
+  margin-bottom: 30px; /* Уменьшено */
+  text-align: center;
+}
+
+.about__title {
+  font-size: 28px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.about__text {
+  font-size: 16px;
+  color: #777;
+  padding: 0 10px; /* Отступы для узких экранов */
+}
+
+/* Навыки */
+.skills {
+  margin-bottom: 30px;
+}
+
+.skills__title {
+  font-size: 28px;
+  color: #555;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.skills__category {
+  margin-bottom: 20px;
+}
+
+.skills__category-title {
+  font-size: 20px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.skills__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px; /* Уменьшенный зазор */
+}
+
+.skills__icon {
+  width: 40px; /* Меньше для мобильных */
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.skills__icon:hover {
+  transform: scale(1.1); /* Чуть меньше эффект */
+}
+
+/* Проекты */
+.projects {
+  margin-bottom: 30px;
+}
+
+.projects__title {
+  font-size: 28px;
+  color: #555;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.projects__list {
+  display: flex;
+  flex-direction: column; /* Столбец по умолчанию для мобильных */
+  gap: 20px; /* Уменьшенный зазор */
+}
+
+.project-card {
+  background-color: #fff;
+  padding: 15px; /* Уменьшено */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Меньше тень */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px); /* Меньше подъем */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.project-card__title {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.project-card__description {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.project-card__link {
+  display: inline-block;
+  font-size: 14px;
+  color: #555;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.project-card__link:hover {
+  color: #999;
+}
+
+/* Футер */
+.footer {
+  text-align: center;
+  padding: 30px 0; /* Уменьшено */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer__title {
+  font-size: 28px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.footer__text {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 8px;
+}
+
+/* Медиа-запросы для десктопов (больше 768px) */
+@media (min-width: 768px) {
   .container {
-    max-width: 1200px;
-    margin: 0 auto;
     padding: 20px;
   }
-  
-  /* Шапка */
+
   .header {
-    text-align: center;
     padding: 60px 0;
-    background-color: #e0e0e0; /* Средний серый */
-    color: #333;
-    border-radius: 10px;
-    margin-bottom: 40px;
   }
-  
+
   .header__title {
     font-size: 48px;
-    margin-bottom: 10px;
   }
-  
+
   .header__subtitle {
     font-size: 24px;
-    color: #666; /* Темно-серый для контраста */
   }
-  
-  /* Обо мне */
-  .about {
-    margin-bottom: 60px;
-    text-align: center;
-  }
-  
-  .about__title {
+
+  .about__title,
+  .skills__title,
+  .projects__title,
+  .footer__title {
     font-size: 36px;
-    color: #555; /* Темно-серый заголовок */
-    margin-bottom: 20px;
   }
-  
+
   .about__text {
     font-size: 18px;
-    color: #777;
     max-width: 600px;
     margin: 0 auto;
   }
-  
-  /* Навыки */
-  .skills {
-    margin-bottom: 60px;
-  }
-  
-  .skills__title {
-    font-size: 36px;
-    color: #555;
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  
-  .skills__category {
-    margin-bottom: 30px;
-  }
-  
+
   .skills__category-title {
     font-size: 24px;
-    color: #333;
-    text-align: center;
-    margin-bottom: 20px;
   }
-  
-  .skills__list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
-  
+
   .skills__icon {
     width: 50px;
     height: 50px;
-    transition: transform 0.3s ease;
   }
-  
-  .skills__icon:hover {
-    transform: scale(1.2);
-  }
-  
-  /* Проекты */
-  .projects {
-    margin-bottom: 60px;
-  }
-  
-  .projects__title {
-    font-size: 36px;
-    color: #555;
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  
+
   .projects__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
   }
-  
+
   .project-card {
-    background-color: #fff; /* Белый фон карточек */
     padding: 20px;
-    border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  
-  .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  }
-  
+
   .project-card__title {
     font-size: 24px;
-    color: #333;
-    margin-bottom: 10px;
   }
-  
+
   .project-card__description {
     font-size: 16px;
-    color: #777;
-    margin-bottom: 15px;
   }
-  
+
   .project-card__link {
-    display: inline-block;
     font-size: 16px;
-    color: #555; /* Серый для ссылок */
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
   }
-  
-  .project-card__link:hover {
-    color: #999; /* Светлее при наведении */
-  }
-  
-  /* Футер */
+
   .footer {
-    text-align: center;
     padding: 40px 0;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   }
-  
+}
+
+/* Для очень узких экранов (меньше 480px) */
+@media (max-width: 480px) {
+  .header__title {
+    font-size: 28px;
+  }
+
+  .header__subtitle {
+    font-size: 16px;
+  }
+
+  .about__title,
+  .skills__title,
+  .projects__title,
   .footer__title {
-    font-size: 36px;
-    color: #555;
-    margin-bottom: 20px;
+    font-size: 24px;
   }
-  
-  .footer__text {
+
+  .skills__category-title {
     font-size: 18px;
-    color: #777;
-    margin-bottom: 10px;
   }
-  
-  /* Адаптивность */
-  @media (max-width: 768px) {
-    .header__title {
-      font-size: 36px;
-    }
-  
-    .header__subtitle {
-      font-size: 20px;
-    }
-  
-    .about__title,
-    .skills__title,
-    .projects__title,
-    .footer__title {
-      font-size: 28px;
-    }
-  
-    .skills__category-title {
-      font-size: 20px;
-    }
-  
-    .skills__icon {
-      width: 40px;
-      height: 40px;
-    }
-  
-    .project-card {
-      padding: 15px;
-    }
+
+  .skills__icon {
+    width: 35px;
+    height: 35px;
   }
+
+  .project-card__title {
+    font-size: 18px;
+  }
+
+  .project-card__description {
+    font-size: 13px;
+  }
+
+  .project-card__link {
+    font-size: 13px;
+  }
+}
